@@ -16,6 +16,8 @@ import torch
 from setuptools import find_packages, setup
 from torch.utils.cpp_extension import CppExtension, CUDA_HOME, CUDAExtension
 
+os.environ.setdefault("MAX_JOBS", "1")
+os.environ.setdefault("PYTORCH3D_NO_NINJA", "1")
 
 def get_existing_ccbin(nvcc_args: List[str]) -> Optional[str]:
     """
